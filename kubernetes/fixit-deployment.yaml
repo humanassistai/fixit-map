@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: fixit-vancouver-config
+  name: fixit-berlin-config
   labels:
     app: fixit
 data:
@@ -37,11 +37,11 @@ spec:
         run: fixit
     spec:
       containers:
-      - image: troy0820/fix-vancouver:v3
+      - image: humanassistai/fix-berlin:v3
         imagePullPolicy: Never
         envFrom:
           - configMapRef:
-              name: fixit-vancouver-config
+              name: fixit-berlin-config
         livenessProbe:
           failureThreshold: 3
           httpGet:
